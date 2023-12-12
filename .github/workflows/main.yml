@@ -29,7 +29,7 @@ jobs:
 
       - name: Run Tests
         continue-on-error: true
-        run: mvn test -DbrowserType="chrome" -DheadlessExecution="true"  -Dtest="${{ github.event.inputs.testsPath }}"
+        run: mvn test -DtargetBrowserName="firefox"  -DheadlessExecution="true" -DopenAllureReportAfterExecution="true" -DgenerateExtentReports="true" -DopenExtentReportAfterExecution="true"  -Dtest="${{ github.event.inputs.testsPath }}"
 
       - name: Publish Report
         # continue-on-error: true
